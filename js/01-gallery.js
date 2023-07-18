@@ -29,15 +29,15 @@ gallery.onclick = (evt) => {
 		<img width="1400" height="900" src="${evt.target.dataset.source}">
 	`, {
         onShow: () => {
-            document.addEventListener('keydown', closeModal);
+            document.addEventListener('keydown', closeModalOnEscape);
         },
         onClose: () => {
-            document.removeEventListener('keydown', closeModal);
+            document.removeEventListener('keydown', closeModalOnEscape);
         },
     });
     instance.show();
     
-        function closeModal(evt) {
+        function closeModalOnEscape(evt) {
        if (evt.code !== 'Escape') {
            return;
        } 
